@@ -13,23 +13,38 @@
   <meta property="og:description" content="Sistemi digitali su misura, integrazioni ERP/CRM, automazioni aziendali e AI applicata ai processi per imprese che vogliono crescere con più controllo." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://vysio.it/" />
-  <!-- <meta property="og:image" content="https://vysio.it/og-image.jpg" /> -->
 
   <link rel="canonical" href="https://vysio.it/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <script src="main.js" defer></script>
 </head>
 <body>
+  <!-- Grain overlay -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Custom cursor -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
   <a class="skip-link" href="#main">Salta al contenuto principale</a>
 
   <header class="site-header" id="siteHeader">
     <nav class="nav container" aria-label="Navigazione principale">
+
+      <!-- SVG Eye Logo -->
       <a class="brand" href="#top" aria-label="Vysio, torna all'inizio">
-        <span class="brand-mark" aria-hidden="true">V</span>
-        <span>Vysio</span>
+        <svg class="brand-eye" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="30" height="30">
+          <circle class="eye-rim" cx="15" cy="15" r="13.5" stroke="#eadfc9" stroke-width="1.3"/>
+          <path class="eye-lid-top" d="M3 15 C5.5 8 24.5 8 27 15" stroke="#eadfc9" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+          <path class="eye-lid-bot" d="M3 15 C5.5 22 24.5 22 27 15" stroke="#eadfc9" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+          <circle class="eye-iris" cx="15" cy="15" r="5" stroke="#b58a5d" stroke-width="1.2" fill="rgba(181,138,93,0.08)"/>
+          <circle class="eye-pupil" cx="15" cy="15" r="2.2" fill="#b58a5d"/>
+          <circle class="eye-gleam" cx="17" cy="13.2" r="1" fill="rgba(234,223,201,0.5)"/>
+        </svg>
+        <span class="brand-wordmark">Vysio</span>
       </a>
 
       <button class="nav-toggle" id="navToggle" type="button" aria-label="Apri menu" aria-controls="mobileMenu" aria-expanded="false">
@@ -45,7 +60,7 @@
         <li><a href="#ai">AI</a></li>
       </ul>
 
-      <a class="nav-cta" href="#contatti">Prenota una consulenza</a>
+      <a class="nav-cta magnetic" href="#contatti">Prenota una consulenza</a>
     </nav>
 
     <div class="mobile-menu" id="mobileMenu" hidden>
@@ -60,7 +75,23 @@
 
   <main id="main">
     <section class="hero" id="top" aria-labelledby="heroTitle">
-      <div class="hero-orbit" aria-hidden="true"></div>
+
+      <!-- Large decorative eye -->
+      <div class="hero-eye-bg" aria-hidden="true">
+        <svg viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="300" cy="300" r="290" stroke="rgba(234,223,201,0.05)" stroke-width="1"/>
+          <circle cx="300" cy="300" r="248" stroke="rgba(234,223,201,0.04)" stroke-width="1"/>
+          <path d="M40 300 C100 140 200 60 300 60 C400 60 500 140 560 300 C500 460 400 540 300 540 C200 540 100 460 40 300Z"
+                stroke="rgba(234,223,201,0.10)" stroke-width="1.5" fill="none"/>
+          <circle cx="300" cy="300" r="110" stroke="rgba(181,138,93,0.16)" stroke-width="1.5" fill="none"/>
+          <circle cx="300" cy="300" r="66" stroke="rgba(181,138,93,0.12)" stroke-width="1" fill="rgba(181,138,93,0.04)"/>
+          <circle cx="300" cy="300" r="22" fill="rgba(181,138,93,0.12)"/>
+          <circle cx="330" cy="274" r="9" fill="rgba(234,223,201,0.07)"/>
+          <!-- Scanning ring -->
+          <circle class="scan-ring" cx="300" cy="300" r="150" stroke="rgba(181,138,93,0.08)" stroke-width="1" stroke-dasharray="6 10" fill="none"/>
+        </svg>
+      </div>
+
       <div class="container hero-inner">
         <p class="eyebrow reveal">Consulenza digitale · Automazioni · AI applicata</p>
 
@@ -73,7 +104,7 @@
         </p>
 
         <div class="hero-actions reveal" aria-label="Azioni principali">
-          <a class="btn btn-primary" href="#contatti">Prenota una consulenza</a>
+          <a class="btn btn-primary magnetic" href="#contatti">Prenota una consulenza</a>
           <a class="btn btn-secondary" href="#metodo">Scopri il metodo</a>
         </div>
 
@@ -126,7 +157,7 @@
         </div>
         <div>
           <p>
-            Vysio analizza il modo in cui lavora la tua azienda e progetta un’infrastruttura digitale coerente: gestionale, CRM, automazioni, integrazioni API e AI dove servono davvero.
+            Vysio analizza il modo in cui lavora la tua azienda e progetta un'infrastruttura digitale coerente: gestionale, CRM, automazioni, integrazioni API e AI dove servono davvero.
           </p>
           <p class="statement">Non partiamo dal software. Partiamo dal processo.</p>
         </div>
@@ -144,34 +175,39 @@
         </div>
 
         <div class="cards-grid services-grid">
-          <article class="service-card reveal">
+          <article class="service-card tilt-card reveal">
             <span class="card-number">01</span>
             <h3>Gestionale ERP / CRM</h3>
             <p>Progettiamo e personalizziamo sistemi gestionali per vendite, operations, clienti, attività interne e controllo dei dati.</p>
+            <div class="card-glow" aria-hidden="true"></div>
           </article>
 
-          <article class="service-card reveal">
+          <article class="service-card tilt-card reveal">
             <span class="card-number">02</span>
             <h3>Integrazioni API</h3>
             <p>Colleghiamo strumenti, database, piattaforme e software già presenti in azienda per eliminare passaggi manuali e silos informativi.</p>
+            <div class="card-glow" aria-hidden="true"></div>
           </article>
 
-          <article class="service-card reveal">
+          <article class="service-card tilt-card reveal">
             <span class="card-number">03</span>
             <h3>Automazioni aziendali</h3>
             <p>Automatizziamo attività ripetitive, notifiche, follow-up, report, assegnazioni e flussi operativi.</p>
+            <div class="card-glow" aria-hidden="true"></div>
           </article>
 
-          <article class="service-card reveal">
+          <article class="service-card tilt-card reveal">
             <span class="card-number">04</span>
             <h3>AI applicata ai processi</h3>
-            <p>Integriamo l’intelligenza artificiale nei workflow aziendali: analisi, documenti, customer care, vendite, report e supporto decisionale.</p>
+            <p>Integriamo l'intelligenza artificiale nei workflow aziendali: analisi, documenti, customer care, vendite, report e supporto decisionale.</p>
+            <div class="card-glow" aria-hidden="true"></div>
           </article>
 
-          <article class="service-card reveal service-card--wide">
+          <article class="service-card tilt-card reveal service-card--wide">
             <span class="card-number">05</span>
             <h3>Dashboard e controllo dati</h3>
             <p>Rendiamo i dati leggibili, aggiornati e utili per decidere meglio, senza aspettare report manuali.</p>
+            <div class="card-glow" aria-hidden="true"></div>
           </article>
         </div>
       </div>
@@ -226,7 +262,7 @@
         </div>
         <div class="section-body reveal">
           <p>
-            Vysio è pensato per realtà che hanno già superato la fase dell’improvvisazione e vogliono costruire un sistema più ordinato, scalabile e misurabile.
+            Vysio è pensato per realtà che hanno già superato la fase dell'improvvisazione e vogliono costruire un sistema più ordinato, scalabile e misurabile.
           </p>
           <div class="pill-list" aria-label="Tipologie di aziende e team">
             <span>PMI</span>
@@ -248,24 +284,24 @@
           <p class="section-label">AI concreta</p>
           <h2 id="aiTitle">AI integrata nei processi, non appoggiata sopra.</h2>
           <p>
-            L’intelligenza artificiale diventa utile quando entra nei flussi quotidiani: preventivi, report, customer care, follow-up commerciali, analisi dati, gestione documentale e supporto decisionale.
+            L'intelligenza artificiale diventa utile quando entra nei flussi quotidiani: preventivi, report, customer care, follow-up commerciali, analisi dati, gestione documentale e supporto decisionale.
           </p>
         </div>
 
         <div class="ai-examples reveal" aria-label="Esempi di AI per aziende">
-          <div>
+          <div class="tilt-card">
             <h3>Documenti</h3>
             <p>Generazione, classificazione e sintesi di contenuti operativi.</p>
           </div>
-          <div>
+          <div class="tilt-card">
             <h3>Clienti</h3>
             <p>Analisi conversazioni, richieste ricorrenti e supporto al customer care.</p>
           </div>
-          <div>
+          <div class="tilt-card">
             <h3>Vendite</h3>
             <p>Suggerimenti commerciali, follow-up e preparazione delle attività.</p>
           </div>
-          <div>
+          <div class="tilt-card">
             <h3>Dati</h3>
             <p>Report automatici, assistenti interni e automazioni con dati aziendali.</p>
           </div>
@@ -296,12 +332,21 @@
 
     <section class="section final-cta" id="contatti" aria-labelledby="ctaTitle">
       <div class="container final-cta-card reveal">
+        <!-- Decorative small eye -->
+        <div class="cta-eye-deco" aria-hidden="true">
+          <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="60" cy="60" r="58" stroke="rgba(234,223,201,0.10)" stroke-width="1"/>
+            <path d="M8 60 C20 28 100 28 112 60 C100 92 20 92 8 60Z" stroke="rgba(234,223,201,0.14)" stroke-width="1.2" fill="none"/>
+            <circle cx="60" cy="60" r="22" stroke="rgba(181,138,93,0.22)" stroke-width="1.2" fill="none"/>
+            <circle cx="60" cy="60" r="8" fill="rgba(181,138,93,0.18)"/>
+          </svg>
+        </div>
         <p class="section-label">Primo passo</p>
         <h2 id="ctaTitle">Partiamo da una mappa dei tuoi processi.</h2>
         <p>
           In una prima call analizziamo strumenti, flussi e criticità. Capirai cosa si può semplificare, integrare o automatizzare.
         </p>
-        <a class="btn btn-primary" href="mailto:hello@vysio.it?subject=Richiesta%20consulenza%20Vysio">Prenota una consulenza</a>
+        <a class="btn btn-primary magnetic" href="mailto:hello@vysio.it?subject=Richiesta%20consulenza%20Vysio">Prenota una consulenza</a>
         <span class="cta-microcopy">Prima analisi gratuita di 30 minuti.</span>
       </div>
     </section>
@@ -311,8 +356,15 @@
     <div class="container footer-grid">
       <div>
         <a class="brand footer-brand" href="#top" aria-label="Vysio, torna all'inizio">
-          <span class="brand-mark" aria-hidden="true">V</span>
-          <span>Vysio</span>
+          <svg class="brand-eye" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="28" height="28">
+            <circle cx="15" cy="15" r="13.5" stroke="#eadfc9" stroke-width="1.3"/>
+            <path d="M3 15 C5.5 8 24.5 8 27 15" stroke="#eadfc9" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+            <path d="M3 15 C5.5 22 24.5 22 27 15" stroke="#eadfc9" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+            <circle cx="15" cy="15" r="5" stroke="#b58a5d" stroke-width="1.2" fill="rgba(181,138,93,0.08)"/>
+            <circle cx="15" cy="15" r="2.2" fill="#b58a5d"/>
+            <circle cx="17" cy="13.2" r="1" fill="rgba(234,223,201,0.5)"/>
+          </svg>
+          <span class="brand-wordmark">Vysio</span>
         </a>
         <p>Sistemi digitali su misura per aziende che vogliono crescere con più controllo sui processi.</p>
       </div>
@@ -348,6 +400,7 @@
     <style>
       .reveal { opacity: 1; transform: none; }
       .mobile-menu { display: block; }
+      .cursor-dot, .cursor-ring { display: none; }
     </style>
   </noscript>
 </body>
