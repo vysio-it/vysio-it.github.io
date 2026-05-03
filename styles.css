@@ -143,29 +143,26 @@ h1, h2, h3, p { margin-top: 0; }
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 0;
   color: var(--text);
   line-height: 1;
 }
 
-.brand-text {
-  font-family: var(--font-logo);
-  font-size: 1.75rem;
-  letter-spacing: 0.09em;
-  color: var(--text);
-  line-height: 1;
-  display: inline-block;
-}
-
-.brand-eye-o {
-  width: 1.75rem;
-  height: 1.75rem;
-  flex-shrink: 0;
+.brand-logo {
   display: block;
-  transition: transform 380ms var(--ease);
+  width: clamp(132px, 12vw, 174px);
+  height: auto;
+  object-fit: contain;
+  transition: transform 380ms var(--ease), opacity 220ms ease;
 }
 
-.brand:hover .brand-eye-o { transform: scale(1.08); }
+.brand:hover .brand-logo {
+  transform: scale(1.035);
+  opacity: 0.94;
+}
+
+.footer-brand .brand-logo {
+  width: clamp(150px, 14vw, 190px);
+}
 
 /* ── Header ─────────────────────── */
 .site-header {
@@ -788,6 +785,7 @@ p {
 @media (max-width: 840px) {
   :root { --container: min(100% - 26px, 1160px); }
   .nav { min-height: 66px; }
+  .brand-logo { width: 126px; }
   .nav-links, .nav-cta { display: none; }
   .nav-toggle { display: inline-flex; }
   .hero { min-height: auto; padding-top: 115px; }
