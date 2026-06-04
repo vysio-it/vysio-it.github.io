@@ -3,31 +3,88 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#060607" />
-  <meta name="description" content="Vysio progetta gestionali su misura, integrazioni ERP/CRM, automazioni aziendali e soluzioni AI per PMI e imprese." />
-  <meta name="robots" content="index, follow" />
-  <title>Vysio | Consulenza digitale, automazioni e AI</title>
-  <meta property="og:title" content="Vysio | Consulenza digitale, automazioni e AI" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://vysio.it/" />
+  <meta name="theme-color" content="#1a1713" />
+  <meta name="color-scheme" content="dark" />
+  <title>Vysio | Automazioni aziendali, gestionali su misura e AI per processi</title>
+  <meta name="description" content="Vysio progetta CRM, gestionali, automazioni, integrazioni API, dashboard e AI applicata per aziende che vogliono più controllo sui processi." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
   <link rel="canonical" href="https://vysio.it/" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <link rel="stylesheet" href="styles.css" />
+
+  <meta property="og:locale" content="it_IT" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Vysio | Automazioni aziendali, gestionali su misura e AI per processi" />
+  <meta property="og:description" content="Architetture digitali per processi, dati, automazione e AI applicata. Meno lavoro manuale, più controllo operativo." />
+  <meta property="og:url" content="https://vysio.it/" />
+  <meta property="og:site_name" content="Vysio" />
+  <meta property="og:image" content="https://vysio.it/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Vysio | Automazioni aziendali, gestionali su misura e AI per processi" />
+  <meta name="twitter:description" content="CRM, gestionali, automazioni, integrazioni API, dashboard e AI applicata per processi aziendali più governabili." />
+  <meta name="twitter:image" content="https://vysio.it/logo.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://vysio.it/#organization",
+        "name": "Vysio",
+        "legalName": "Vysio - Sergio De Ceglia",
+        "vatID": "IT04996480275",
+        "url": "https://vysio.it/",
+        "logo": "https://vysio.it/logo.png",
+        "email": "info@vysio.it",
+        "telephone": "+393921589554",
+        "sameAs": [],
+        "description": "Vysio progetta sistemi operativi digitali per aziende: CRM, gestionali, automazioni aziendali, integrazioni API, dashboard e AI applicata ai processi."
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://vysio.it/#professional-service",
+        "name": "Vysio",
+        "legalName": "Vysio - Sergio De Ceglia",
+        "url": "https://vysio.it/",
+        "email": "info@vysio.it",
+        "telephone": "+393921589554",
+        "vatID": "IT04996480275",
+        "areaServed": {
+          "@type": "Country",
+          "name": "Italia"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "IT"
+        },
+        "priceRange": "€€€",
+        "description": "Consulenza digitale per PMI e aziende che vogliono ottimizzare processi aziendali, collegare strumenti, automatizzare workflow e rendere i dati più leggibili."
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://vysio.it/#website",
+        "url": "https://vysio.it/",
+        "name": "Vysio",
+        "publisher": {
+          "@id": "https://vysio.it/#organization"
+        },
+        "inLanguage": "it-IT"
+      }
+    ]
+  }
+  </script>
   <script src="main.js" defer></script>
 </head>
 <body>
-  <div class="grain" aria-hidden="true"></div>
-  <div class="cursor-dot" aria-hidden="true"></div>
-  <div class="cursor-ring" aria-hidden="true"></div>
   <a class="skip-link" href="#main">Salta al contenuto</a>
+  <div class="site-bg" aria-hidden="true"></div>
 
   <header class="site-header" id="siteHeader">
     <nav class="nav container" aria-label="Navigazione principale">
-
       <a class="brand" href="#top" aria-label="Vysio — torna all'inizio">
-        <img class="brand-logo" src="logo.png" alt="Vysio — Vision. Focus. Future." width="2048" height="682" />
+        <img class="brand-logo" src="logo.png" alt="Logo Vysio" width="900" height="300" decoding="async" />
       </a>
 
       <button class="nav-toggle" id="navToggle" type="button" aria-label="Apri menu" aria-controls="mobileMenu" aria-expanded="false">
@@ -39,70 +96,55 @@
         <li><a href="#servizi">Servizi</a></li>
         <li><a href="#metodo">Metodo</a></li>
         <li><a href="#ai">AI</a></li>
-        <li><a href="#per-chi">Per chi</a></li>
+        <li><a href="#benefici">Benefici</a></li>
+        <li><a href="#contatti">Contatti</a></li>
       </ul>
 
-      <a class="nav-cta magnetic" href="#contatti">Consulenza gratuita</a>
+      <a class="nav-cta" href="#contatti">Prenota una consulenza</a>
     </nav>
 
     <div class="mobile-menu" id="mobileMenu" hidden>
       <a href="#servizi">Servizi</a>
       <a href="#metodo">Metodo</a>
       <a href="#ai">AI</a>
-      <a href="#per-chi">Per chi</a>
-      <a class="mobile-menu__cta" href="#contatti">Consulenza gratuita</a>
+      <a href="#benefici">Benefici</a>
+      <a href="#contatti">Contatti</a>
+      <a class="mobile-menu__cta" href="#contatti">Prenota una consulenza</a>
     </div>
   </header>
 
   <main id="main">
-
     <section class="hero" id="top" aria-labelledby="heroTitle">
-      <div class="hero-eye-bg" aria-hidden="true">
-        <svg viewBox="0 0 700 700" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="350" cy="350" r="335" stroke="rgba(244,239,230,0.035)" stroke-width="1"/>
-          <circle cx="350" cy="350" r="285" stroke="rgba(244,239,230,0.025)" stroke-width="1"/>
-          <path d="M25 350 C90 155 240 55 350 55 C460 55 610 155 675 350 C610 545 460 645 350 645 C240 645 90 545 25 350Z"
-                stroke="rgba(244,239,230,0.065)" stroke-width="1.8" fill="none"/>
-          <circle cx="350" cy="350" r="122" stroke="rgba(181,138,93,0.13)" stroke-width="1.2" fill="none"/>
-          <circle cx="350" cy="350" r="68" stroke="rgba(181,138,93,0.09)" stroke-width="1" fill="rgba(181,138,93,0.022)"/>
-          <circle cx="350" cy="350" r="22" fill="rgba(181,138,93,0.09)"/>
-          <circle cx="385" cy="316" r="10" fill="rgba(244,239,230,0.045)"/>
-          <circle class="scan-ring" cx="350" cy="350" r="178" stroke="rgba(181,138,93,0.065)" stroke-width="1" stroke-dasharray="5 13" fill="none"/>
-          <circle class="scan-ring-2" cx="350" cy="350" r="245" stroke="rgba(244,239,230,0.032)" stroke-width="0.8" stroke-dasharray="3 20" fill="none"/>
-        </svg>
-      </div>
-
       <div class="container hero-inner">
-        <p class="eyebrow reveal">Consulenza digitale · Automazioni · AI applicata</p>
+        <p class="eyebrow reveal">Operational systems · Automation · AI</p>
 
-        <h1 class="hero-title reveal" id="heroTitle">
-          Sistemi digitali<br>su misura per<br>aziende che crescono.
-        </h1>
+        <h1 class="hero-title reveal" id="heroTitle">Architetture digitali per aziende che vogliono controllo, efficienza e scala.</h1>
 
-        <p class="hero-copy reveal">
-          Gestionali, integrazioni e AI applicata ai processi reali.<br class="br-desktop"> Vysio costruisce l'infrastruttura digitale intorno al tuo modo di lavorare.
-        </p>
+        <p class="hero-copy reveal">Analizziamo processi, strumenti e dati aziendali. Poi progettiamo gestionali, automazioni, integrazioni e AI applicata per ridurre attività manuali, errori e dispersione operativa.</p>
 
-        <div class="hero-actions reveal">
-          <a class="btn btn-primary magnetic" href="#contatti">Prenota una consulenza</a>
+        <div class="hero-actions reveal" aria-label="Azioni principali">
+          <a class="btn btn-primary" href="#contatti">Prenota una consulenza</a>
           <a class="btn btn-secondary" href="#metodo">Scopri il metodo</a>
         </div>
 
-        <p class="hero-note reveal">Prima analisi gratuita · 30 minuti</p>
+        <p class="hero-note reveal">Prima analisi gratuita · 30 minuti · senza impegno</p>
 
-        <div class="hero-panel reveal">
-          <div>
-            <span class="panel-kicker">Processi</span>
-            <strong>Flussi ordinati</strong>
-          </div>
-          <div>
-            <span class="panel-kicker">Dati</span>
-            <strong>Informazioni leggibili</strong>
-          </div>
-          <div>
-            <span class="panel-kicker">Sistemi</span>
-            <strong>Strumenti connessi</strong>
-          </div>
+        <div class="hero-framework reveal" aria-label="Metodo Vysio in tre fasi">
+          <article>
+            <span>01</span>
+            <h3>Diagnosi operativa</h3>
+            <p>Mappiamo flussi, strumenti e colli di bottiglia.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Architettura digitale</h3>
+            <p>Disegniamo CRM, gestionali, automazioni e integrazioni.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Implementazione misurabile</h3>
+            <p>Costruiamo sistemi chiari, mantenibili e scalabili.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -110,17 +152,18 @@
     <section class="section problem" id="problema" aria-labelledby="problemTitle">
       <div class="container split">
         <div class="section-heading reveal">
-          <p class="section-label">Il problema</p>
-          <h2 id="problemTitle">Troppi strumenti che non comunicano tra loro.</h2>
+          <p class="section-label">Problema</p>
+          <h2 id="problemTitle">Quando l’azienda cresce, il caos operativo costa.</h2>
         </div>
         <div class="section-body reveal">
-          <p>CRM usati a metà, fogli Excel duplicati, report costruiti a mano. Le aziende crescono, ma i processi restano fragili.</p>
-          <ul class="check-list">
-            <li>Dati duplicati tra sistemi diversi</li>
-            <li>Software scollegati e passaggi manuali</li>
-            <li>Report lenti e frammentati</li>
+          <p>Strumenti scollegati, dati duplicati, passaggi manuali e report lenti non sono solo inefficienze: sono perdita di controllo.</p>
+          <ul class="compact-list" aria-label="Criticità operative frequenti">
+            <li>CRM usati a metà</li>
+            <li>Excel duplicati</li>
+            <li>Dati sparsi</li>
+            <li>Follow-up manuali</li>
+            <li>Report costruiti a mano</li>
             <li>AI provata, ma non integrata</li>
-            <li>Automazioni assenti o parziali</li>
           </ul>
         </div>
       </div>
@@ -129,12 +172,12 @@
     <section class="section solution" id="soluzione" aria-labelledby="solutionTitle">
       <div class="container solution-card reveal">
         <div>
-          <p class="section-label">La soluzione</p>
-          <h2 id="solutionTitle">Un sistema unico intorno ai tuoi processi.</h2>
+          <p class="section-label">Soluzione</p>
+          <h2 id="solutionTitle">Un’architettura digitale costruita sui processi reali.</h2>
         </div>
         <div>
-          <p>Analizziamo come lavora la tua azienda e progettiamo un'infrastruttura digitale coerente: gestionale, CRM, automazioni, API e AI dove servono davvero.</p>
-          <p class="statement">Non partiamo dal software.<br>Partiamo dal processo.</p>
+          <p>Vysio collega strumenti, dati e persone in un sistema operativo aziendale più chiaro: CRM, gestionali, automazioni, dashboard e AI dove servono davvero.</p>
+          <p class="statement">Il software non deve aggiungere complessità. Deve toglierla.</p>
         </div>
       </div>
     </section>
@@ -143,38 +186,34 @@
       <div class="container">
         <div class="section-intro reveal">
           <p class="section-label">Servizi</p>
-          <h2 id="servicesTitle">Sistemi progettati per lavorare insieme.</h2>
+          <h2 id="servicesTitle">Strumenti connessi. Processi governabili.</h2>
+          <p>Automazioni aziendali, gestionali su misura, CRM su misura, integrazioni API e dashboard progettati come un unico sistema.</p>
         </div>
         <div class="cards-grid">
-          <article class="service-card tilt-card reveal">
+          <article class="service-card reveal">
             <span class="card-number">01</span>
-            <h3>Gestionale ERP / CRM</h3>
-            <p>Sistemi personalizzati per vendite, operations e controllo dati.</p>
-            <div class="card-glow" aria-hidden="true"></div>
+            <h3>CRM e gestionali su misura</h3>
+            <p>Sistemi per vendite, operations, clienti, attività e controllo dati.</p>
           </article>
-          <article class="service-card tilt-card reveal">
+          <article class="service-card reveal">
             <span class="card-number">02</span>
-            <h3>Integrazioni API</h3>
-            <p>Colleghiamo strumenti e piattaforme eliminando i silos informativi.</p>
-            <div class="card-glow" aria-hidden="true"></div>
+            <h3>Automazioni aziendali</h3>
+            <p>Flussi automatici per follow-up, notifiche, documenti, task e processi ripetitivi.</p>
           </article>
-          <article class="service-card tilt-card reveal">
+          <article class="service-card reveal">
             <span class="card-number">03</span>
-            <h3>Automazioni</h3>
-            <p>Attività ripetitive, follow-up e flussi operativi automatizzati.</p>
-            <div class="card-glow" aria-hidden="true"></div>
+            <h3>Integrazioni API</h3>
+            <p>Colleghiamo software, database, CRM, ERP, form, email e piattaforme esterne.</p>
           </article>
-          <article class="service-card tilt-card reveal">
+          <article class="service-card reveal">
             <span class="card-number">04</span>
-            <h3>AI applicata</h3>
-            <p>AI integrata nei workflow: documenti, vendite, customer care.</p>
-            <div class="card-glow" aria-hidden="true"></div>
-          </article>
-          <article class="service-card tilt-card reveal service-card--wide">
-            <span class="card-number">05</span>
             <h3>Dashboard e controllo dati</h3>
-            <p>Dati leggibili e aggiornati per decidere meglio, in tempo reale.</p>
-            <div class="card-glow" aria-hidden="true"></div>
+            <p>Report leggibili, metriche operative e dati aggiornati per decidere meglio.</p>
+          </article>
+          <article class="service-card reveal service-card--wide">
+            <span class="card-number">05</span>
+            <h3>AI applicata ai processi</h3>
+            <p>Assistenti, analisi documentale, sintesi, classificazione e supporto operativo integrati nei workflow.</p>
           </article>
         </div>
       </div>
@@ -184,86 +223,74 @@
       <div class="container">
         <div class="section-intro reveal">
           <p class="section-label">Metodo</p>
-          <h2 id="methodTitle">Nessuna improvvisazione.</h2>
-          <p>Ogni intervento segue una mappa chiara: processi, strumenti, priorità, impatto.</p>
+          <h2 id="methodTitle">Metodo prima del codice.</h2>
+          <p>Non partiamo dal software. Partiamo da come lavora l’azienda.</p>
         </div>
         <ol class="method-list">
           <li class="method-step reveal">
             <span>01</span>
             <div>
-              <h3>Analisi</h3>
-              <p>Mappiamo processi, strumenti e criticità.</p>
+              <h3>Diagnosi</h3>
+              <p>Mappiamo processi, strumenti, ruoli e colli di bottiglia.</p>
             </div>
           </li>
           <li class="method-step reveal">
             <span>02</span>
             <div>
               <h3>Architettura</h3>
-              <p>Disegniamo cosa integrare, automatizzare e costruire.</p>
+              <p>Definiamo cosa integrare, automatizzare, eliminare o costruire.</p>
             </div>
           </li>
           <li class="method-step reveal">
             <span>03</span>
             <div>
               <h3>Implementazione</h3>
-              <p>Realizziamo con attenzione a usabilità e continuità.</p>
+              <p>Sviluppiamo sistemi chiari, usabili e mantenibili.</p>
             </div>
           </li>
           <li class="method-step reveal">
             <span>04</span>
             <div>
               <h3>Ottimizzazione</h3>
-              <p>Misuriamo, miglioriamo e facciamo evolvere nel tempo.</p>
+              <p>Misuriamo l’impatto e miglioriamo nel tempo.</p>
             </div>
           </li>
         </ol>
       </div>
     </section>
 
-    <section class="section audience" id="per-chi" aria-labelledby="audienceTitle">
-      <div class="container split">
-        <div class="section-heading reveal">
-          <p class="section-label">Per chi</p>
-          <h2 id="audienceTitle">Per aziende che crescono e vogliono più controllo.</h2>
-        </div>
-        <div class="section-body reveal">
-          <p>Realtà che hanno superato la fase dell'improvvisazione e vogliono un sistema ordinato, scalabile e misurabile.</p>
-          <div class="pill-list">
-            <span>PMI</span>
-            <span>Studi professionali</span>
-            <span>Aziende commerciali</span>
-            <span>Team vendita</span>
-            <span>Operations</span>
-            <span>Strumenti scollegati</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="section ai" id="ai" aria-labelledby="aiTitle">
       <div class="container ai-layout">
         <div class="ai-copy reveal">
-          <p class="section-label">AI concreta</p>
-          <h2 id="aiTitle">AI nei processi, non appoggiata sopra.</h2>
-          <p>Diventa utile quando entra nei flussi quotidiani: preventivi, report, customer care, analisi dati e supporto decisionale.</p>
+          <p class="section-label">AI applicata</p>
+          <h2 id="aiTitle">AI utile solo quando entra nei processi.</h2>
+          <p>L’AI non deve essere un accessorio. Deve ridurre lavoro manuale, leggere dati, generare supporto operativo e accelerare decisioni.</p>
         </div>
-        <div class="ai-examples reveal">
-          <div class="tilt-card">
+        <div class="ai-examples reveal" aria-label="Aree di applicazione AI">
+          <article>
             <h3>Documenti</h3>
-            <p>Generazione, classificazione e sintesi automatica.</p>
-          </div>
-          <div class="tilt-card">
-            <h3>Clienti</h3>
-            <p>Analisi conversazioni e supporto al customer care.</p>
-          </div>
-          <div class="tilt-card">
+            <p>Lettura, sintesi, classificazione e controllo.</p>
+          </article>
+          <article>
             <h3>Vendite</h3>
-            <p>Suggerimenti commerciali e follow-up intelligenti.</p>
-          </div>
-          <div class="tilt-card">
-            <h3>Dati</h3>
-            <p>Report automatici e assistenti con dati aziendali.</p>
-          </div>
+            <p>Follow-up, priorità commerciali e supporto operativo.</p>
+          </article>
+          <article>
+            <h3>Customer care</h3>
+            <p>Risposte assistite, triage e knowledge base.</p>
+          </article>
+          <article>
+            <h3>Report</h3>
+            <p>Analisi ricorrenti e insight su dati aziendali.</p>
+          </article>
+          <article>
+            <h3>Knowledge base</h3>
+            <p>Ricerca interna e supporto alle procedure.</p>
+          </article>
+          <article>
+            <h3>Operatività interna</h3>
+            <p>Task, documenti e passaggi ripetitivi integrati nei workflow.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -271,80 +298,123 @@
     <section class="section benefits" id="benefici" aria-labelledby="benefitsTitle">
       <div class="container">
         <div class="section-intro reveal">
-          <p class="section-label">Risultati</p>
-          <h2 id="benefitsTitle">Meno complessità. Più controllo.</h2>
+          <p class="section-label">Benefici</p>
+          <h2 id="benefitsTitle">Più controllo. Meno attrito.</h2>
+          <p>Un sistema digitale è utile solo se riduce attrito, errori e lavoro manuale.</p>
         </div>
-        <div class="benefits-grid">
+        <div class="benefits-grid" aria-label="Benefici operativi">
           <div class="benefit reveal">Meno attività manuali</div>
-          <div class="benefit reveal">Meno errori operativi</div>
-          <div class="benefit reveal">Dati leggibili</div>
-          <div class="benefit reveal">Processi fluidi</div>
+          <div class="benefit reveal">Meno errori</div>
+          <div class="benefit reveal">Dati più chiari</div>
           <div class="benefit reveal">Strumenti connessi</div>
-          <div class="benefit reveal">Crescita ordinata</div>
-          <div class="benefit reveal">Team più efficiente</div>
-          <div class="benefit reveal">Clienti soddisfatti</div>
+          <div class="benefit reveal">Tempi operativi ridotti</div>
+          <div class="benefit reveal">Processi misurabili</div>
+          <div class="benefit reveal">Team più allineati</div>
+          <div class="benefit reveal">Decisioni più rapide</div>
         </div>
       </div>
     </section>
 
-    <section class="section final-cta" id="contatti" aria-labelledby="ctaTitle">
-      <div class="container final-cta-card reveal">
-        <div class="cta-eye-deco" aria-hidden="true">
-          <svg viewBox="0 0 160 160" fill="none">
-            <circle cx="80" cy="80" r="78" stroke="rgba(244,239,230,0.055)" stroke-width="1"/>
-            <path d="M2 80 C22 34 138 34 158 80 C138 126 22 126 2 80Z" stroke="rgba(244,239,230,0.08)" stroke-width="1.2" fill="none"/>
-            <circle cx="80" cy="80" r="32" stroke="rgba(181,138,93,0.18)" stroke-width="1.2" fill="none"/>
-            <circle cx="80" cy="80" r="13" fill="rgba(181,138,93,0.11)"/>
-            <circle cx="92" cy="68" r="5" fill="rgba(244,239,230,0.055)"/>
-          </svg>
+    <section class="section contact" id="contatti" aria-labelledby="contactTitle">
+      <div class="container contact-layout">
+        <div class="contact-copy reveal">
+          <p class="section-label">Contatti</p>
+          <h2 id="contactTitle">Partiamo da una mappa dei tuoi processi.</h2>
+          <p>In 30 minuti analizziamo strumenti, flussi e criticità. Capirai dove intervenire per semplificare, integrare o automatizzare.</p>
+          <p class="direct-contact">
+            <span>Preferisci scriverci direttamente?</span>
+            <span class="direct-contact-links">
+              <a href="mailto:info@vysio.it">info@vysio.it</a>
+              <span class="direct-contact-separator" aria-hidden="true">·</span>
+              <a href="tel:+393921589554">+39 392 158 9554</a>
+            </span>
+          </p>
         </div>
-        <p class="section-label">Primo passo</p>
-        <h2 id="ctaTitle">Partiamo da una mappa dei tuoi processi.</h2>
-        <p>In una call analizziamo strumenti, flussi e criticità. Scoprirai cosa si può semplificare, integrare o automatizzare.</p>
-        <a class="btn btn-primary magnetic" href="mailto:hello@vysio.it?subject=Richiesta%20consulenza%20Vysio">Prenota una consulenza</a>
-        <span class="cta-microcopy">Prima analisi gratuita · 30 minuti</span>
+
+        <form class="contact-form reveal" id="contactForm" novalidate>
+          <p class="form-note">Il pulsante aprirà il tuo client email con il messaggio già compilato.</p>
+
+          <div class="field">
+            <label for="fullName">Nome e cognome</label>
+            <input id="fullName" name="fullName" type="text" autocomplete="name" aria-describedby="fullNameError" required />
+            <span class="field-error" id="fullNameError"></span>
+          </div>
+
+          <div class="field">
+            <label for="company">Azienda</label>
+            <input id="company" name="company" type="text" autocomplete="organization" />
+          </div>
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" aria-describedby="emailError" required />
+              <span class="field-error" id="emailError"></span>
+            </div>
+            <div class="field">
+              <label for="phone">Telefono</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="message">Messaggio / esigenza</label>
+            <textarea id="message" name="message" rows="5" aria-describedby="messageError" required></textarea>
+            <span class="field-error" id="messageError"></span>
+          </div>
+
+          <label class="privacy-check" for="privacyConsent">
+            <input id="privacyConsent" name="privacyConsent" type="checkbox" aria-describedby="privacyConsentError" required />
+            <span>Ho letto l’<a href="privacy.html">informativa privacy</a> e acconsento al trattamento dei dati per essere ricontattato.</span>
+          </label>
+          <span class="field-error" id="privacyConsentError"></span>
+
+          <button class="btn btn-primary btn-submit" id="contactSubmit" type="submit" disabled>Prenota una consulenza</button>
+          <p class="form-legal">Nessun dato viene salvato dal sito: il form prepara un’email da inviare dal tuo client.</p>
+        </form>
       </div>
     </section>
-
   </main>
 
   <footer class="footer">
     <div class="container footer-grid">
-      <div>
-        <a class="brand footer-brand" href="#top" aria-label="Vysio">
-          <img class="brand-logo" src="logo.png" alt="Vysio — Vision. Focus. Future." width="2048" height="682" />
+      <div class="footer-company">
+        <a class="brand footer-brand" href="#top" aria-label="Vysio — torna all'inizio">
+          <img class="brand-logo" src="logo.png" alt="Logo Vysio" width="900" height="300" loading="lazy" decoding="async" />
         </a>
-        <p>Sistemi digitali su misura per aziende che vogliono crescere con più controllo.</p>
-        <p class="footer-tagline">Vision. Focus. Future.</p>
+        <p>Vysio progetta sistemi operativi digitali per trasformare caos, strumenti scollegati e lavoro manuale in controllo, automazione e decisioni chiare.</p>
+      </div>
+      <div>
+        <h2 class="footer-title">Azienda</h2>
+        <p>Vysio - Sergio De Ceglia</p>
+        <p>P. IVA IT04996480275</p>
+        <p>Italia</p>
       </div>
       <div>
         <h2 class="footer-title">Contatti</h2>
-        <a href="mailto:hello@vysio.it">hello@vysio.it</a>
-        <a href="tel:+390212345678">+39 02 1234 5678</a>
+        <a href="mailto:info@vysio.it">info@vysio.it</a>
+        <a href="tel:+393921589554">+39 392 158 9554</a>
       </div>
       <div>
-        <h2 class="footer-title">Navigazione</h2>
+        <h2 class="footer-title">Link</h2>
         <a href="#servizi">Servizi</a>
         <a href="#metodo">Metodo</a>
         <a href="#ai">AI</a>
-        <a href="#" aria-label="LinkedIn Vysio">LinkedIn</a>
-      </div>
-      <div>
-        <h2 class="footer-title">Legale</h2>
-        <a href="#">Privacy</a>
-        <a href="#">Cookie</a>
+        <a href="#contatti">Contatti</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="cookie.html">Cookie</a>
       </div>
     </div>
     <div class="container footer-bottom">
-      <p>© 2026 Vysio — P. IVA</p>
-      <p>Italia</p>
+      <p>© 2026 Vysio - Sergio De Ceglia</p>
+      <p><a href="https://vysio.it/" aria-label="Sito Vysio">https://vysio.it/</a></p>
     </div>
   </footer>
 
   <noscript>
     <style>
       .reveal { opacity: 1; transform: none; }
-      .cursor-dot, .cursor-ring { display: none; }
+      .contact-form .btn-submit { opacity: .55; }
     </style>
   </noscript>
 </body>
