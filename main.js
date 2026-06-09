@@ -291,12 +291,12 @@
   };
 
   const getConsentBannerMarkup = () => `
-    <div class="cookie-consent" id="cookieConsent" role="dialog" aria-modal="true" aria-labelledby="cookieConsentTitle" aria-describedby="cookieConsentDescription" hidden>
+    <div class="cookie-consent" id="cookieConsent" role="region" aria-labelledby="cookieConsentTitle" aria-describedby="cookieConsentDescription" hidden>
       <div class="cookie-consent__panel" role="document">
         <button class="cookie-consent__close" type="button" data-cookie-action="reject" aria-label="Continua senza accettare cookie non necessari">×</button>
-        <p class="cookie-consent__eyebrow">Privacy preferences</p>
-        <h2 id="cookieConsentTitle">Gestione cookie e tracciamenti</h2>
-        <p id="cookieConsentDescription">Usiamo solo elementi tecnici necessari al funzionamento del sito e alla memorizzazione della tua scelta. Eventuali analytics o marketing vengono caricati solo dopo consenso esplicito.</p>
+        <p class="cookie-consent__eyebrow">Privacy</p>
+        <h2 id="cookieConsentTitle">Cookie e preferenze</h2>
+        <p id="cookieConsentDescription">Usiamo cookie tecnici. Analytics e marketing, se aggiunti in futuro, partono solo con il tuo consenso.</p>
 
         <div class="cookie-consent__details" id="cookieConsentDetails" hidden>
           <div class="cookie-consent__category">
@@ -323,9 +323,9 @@
         </div>
 
         <div class="cookie-consent__actions">
-          <button class="cookie-btn cookie-btn--secondary" type="button" data-cookie-action="reject">Rifiuta non necessari</button>
+          <button class="cookie-btn cookie-btn--secondary" type="button" data-cookie-action="reject">Rifiuta</button>
           <button class="cookie-btn cookie-btn--ghost" type="button" data-cookie-action="customize" aria-expanded="false" aria-controls="cookieConsentDetails">Personalizza</button>
-          <button class="cookie-btn cookie-btn--primary" type="button" data-cookie-action="accept">Accetta tutti</button>
+          <button class="cookie-btn cookie-btn--primary" type="button" data-cookie-action="accept">Accetta</button>
           <button class="cookie-btn cookie-btn--primary cookie-btn--save" type="button" data-cookie-action="save" hidden>Salva preferenze</button>
         </div>
 
@@ -358,15 +358,12 @@
       if (analyticsToggle) analyticsToggle.checked = Boolean(stored.analytics);
       if (marketingToggle) marketingToggle.checked = Boolean(stored.marketing);
       banner.hidden = false;
-      document.body.classList.add('cookie-open');
       if (mode === 'settings') showDetails();
-      banner.querySelector('[data-cookie-action="reject"]')?.focus({ preventScroll: true });
     };
 
     const closeBanner = () => {
       if (!banner) return;
       banner.hidden = true;
-      document.body.classList.remove('cookie-open');
     };
 
     const showDetails = () => {
