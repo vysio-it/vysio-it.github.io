@@ -166,7 +166,7 @@
       }
 
       if (!consent.checked) {
-        setError('privacyConsent', 'Per procedere è necessario confermare la lettura dell’informativa privacy.');
+        setError('privacyConsent', 'Per procedere è necessario confermare la presa visione dell’informativa privacy.');
         valid = false;
       }
 
@@ -193,7 +193,7 @@
         'Email': clean(fields.email.value),
         'Telefono': clean(fields.phone?.value || ''),
         'Messaggio / esigenza': fields.message.value.trim(),
-        'Consenso privacy': 'confermato'
+        'Presa visione privacy': 'confermata'
       };
 
       const body = Object.entries(payload)
@@ -205,4 +205,258 @@
       window.location.href = mailto;
     });
   }
+
+  /* =========================================================
+     Privacy by design — Cookie consent manager
+     - No optional tracking is loaded before consent.
+     - Optional scripts can be added as:
+       <script type="text/plain" data-cookie-category="analytics" data-src="..."></script>
+       <script type="text/plain" data-cookie-category="marketing">...</script>
+  ========================================================= */
+
+  const CONSENT_STORAGE_KEY = 'vysio_cookie_preferences';
+  const CONSENT_VERSION = '2026-06-09';
+  const CONSENT_MAX_AGE_DAYS = 180;
+  const CONSENT_CATEGORIES = ['analytics', 'marketing'];
+
+  const defaultConsent = () => ({
+    version: CONSENT_VERSION,
+    updatedAt: new Date().toISOString(),
+    necessary: true,
+    analytics: false,
+    marketing: false
+  });
+
+  const parseConsent = value => {
+    try {
+      const parsed = JSON.parse(value || '');
+      if (!parsed || parsed.version !== CONSENT_VERSION) return null;
+      if (!parsed.updatedAt) return null;
+      const ageMs = Date.now() - new Date(parsed.updatedAt).getTime();
+      if (!Number.isFinite(ageMs) || ageMs > CONSENT_MAX_AGE_DAYS * 24 * 60 * 60 * 1000) return null;
+      return {
+        ...defaultConsent(),
+        ...parsed,
+        necessary: true,
+        analytics: Boolean(parsed.analytics),
+        marketing: Boolean(parsed.marketing)
+      };
+    } catch (_) {
+      return null;
+    }
+  };
+
+  const getStoredConsent = () => {
+    try { return parseConsent(window.localStorage.getItem(CONSENT_STORAGE_KEY)); }
+    catch (_) { return null; }
+  };
+
+  const storeConsent = preferences => {
+    const consentState = {
+      ...defaultConsent(),
+      ...preferences,
+      necessary: true,
+      updatedAt: new Date().toISOString()
+    };
+
+    try {
+      window.localStorage.setItem(CONSENT_STORAGE_KEY, JSON.stringify(consentState));
+    } catch (_) {
+      // If storage is unavailable, keep consent only for the current page load.
+    }
+
+    window.VysioConsentState = consentState;
+    runConsentedScripts(consentState);
+    updateConsentUi(consentState);
+    return consentState;
+  };
+
+  const hasConsentFor = category => Boolean((window.VysioConsentState || getStoredConsent())?.[category]);
+
+  const runConsentedScripts = consentState => {
+    CONSENT_CATEGORIES.forEach(category => {
+      if (!consentState?.[category]) return;
+      document.querySelectorAll(`script[type="text/plain"][data-cookie-category="${category}"]:not([data-cookie-loaded="true"])`).forEach(script => {
+        const enabledScript = document.createElement('script');
+        Array.from(script.attributes).forEach(attr => {
+          if (attr.name === 'type' || attr.name === 'data-cookie-category' || attr.name === 'data-cookie-loaded') return;
+          if (attr.name === 'data-src') enabledScript.setAttribute('src', attr.value);
+          else enabledScript.setAttribute(attr.name, attr.value);
+        });
+        enabledScript.text = script.textContent || '';
+        script.setAttribute('data-cookie-loaded', 'true');
+        script.parentNode?.insertBefore(enabledScript, script.nextSibling);
+      });
+    });
+  };
+
+  const getConsentBannerMarkup = () => `
+    <div class="cookie-consent" id="cookieConsent" role="dialog" aria-modal="true" aria-labelledby="cookieConsentTitle" aria-describedby="cookieConsentDescription" hidden>
+      <div class="cookie-consent__panel" role="document">
+        <button class="cookie-consent__close" type="button" data-cookie-action="reject" aria-label="Continua senza accettare cookie non necessari">×</button>
+        <p class="cookie-consent__eyebrow">Privacy preferences</p>
+        <h2 id="cookieConsentTitle">Gestione cookie e tracciamenti</h2>
+        <p id="cookieConsentDescription">Usiamo solo elementi tecnici necessari al funzionamento del sito e alla memorizzazione della tua scelta. Eventuali analytics o marketing vengono caricati solo dopo consenso esplicito.</p>
+
+        <div class="cookie-consent__details" id="cookieConsentDetails" hidden>
+          <div class="cookie-consent__category">
+            <div>
+              <strong>Necessari</strong>
+              <span>Essenziali per sicurezza, preferenze privacy e navigazione. Sempre attivi.</span>
+            </div>
+            <input type="checkbox" checked disabled aria-label="Cookie necessari sempre attivi" />
+          </div>
+          <label class="cookie-consent__category" for="cookieAnalytics">
+            <div>
+              <strong>Analytics</strong>
+              <span>Statistiche aggregate sull’utilizzo del sito. Al momento non sono presenti script analytics.</span>
+            </div>
+            <input id="cookieAnalytics" type="checkbox" />
+          </label>
+          <label class="cookie-consent__category" for="cookieMarketing">
+            <div>
+              <strong>Marketing</strong>
+              <span>Pixel, campagne o contenuti di terze parti. Al momento non sono presenti script marketing.</span>
+            </div>
+            <input id="cookieMarketing" type="checkbox" />
+          </label>
+        </div>
+
+        <div class="cookie-consent__actions">
+          <button class="cookie-btn cookie-btn--secondary" type="button" data-cookie-action="reject">Rifiuta non necessari</button>
+          <button class="cookie-btn cookie-btn--ghost" type="button" data-cookie-action="customize" aria-expanded="false" aria-controls="cookieConsentDetails">Personalizza</button>
+          <button class="cookie-btn cookie-btn--primary" type="button" data-cookie-action="accept">Accetta tutti</button>
+          <button class="cookie-btn cookie-btn--primary cookie-btn--save" type="button" data-cookie-action="save" hidden>Salva preferenze</button>
+        </div>
+
+        <p class="cookie-consent__links">
+          <a href="cookie.html">Cookie policy</a>
+          <span aria-hidden="true">·</span>
+          <a href="privacy.html">Privacy policy</a>
+        </p>
+      </div>
+    </div>
+    <button class="cookie-preferences" id="cookiePreferences" type="button" hidden>Gestisci cookie</button>
+  `;
+
+  const ensureConsentUi = () => {
+    if (!document.getElementById('cookieConsent')) {
+      document.body.insertAdjacentHTML('beforeend', getConsentBannerMarkup());
+    }
+
+    const banner = document.getElementById('cookieConsent');
+    const preferencesButton = document.getElementById('cookiePreferences');
+    const details = document.getElementById('cookieConsentDetails');
+    const analyticsToggle = document.getElementById('cookieAnalytics');
+    const marketingToggle = document.getElementById('cookieMarketing');
+    const customizeButton = banner?.querySelector('[data-cookie-action="customize"]');
+    const saveButton = banner?.querySelector('[data-cookie-action="save"]');
+
+    const openBanner = (mode = 'notice') => {
+      if (!banner) return;
+      const stored = getStoredConsent() || defaultConsent();
+      if (analyticsToggle) analyticsToggle.checked = Boolean(stored.analytics);
+      if (marketingToggle) marketingToggle.checked = Boolean(stored.marketing);
+      banner.hidden = false;
+      document.body.classList.add('cookie-open');
+      if (mode === 'settings') showDetails();
+      banner.querySelector('[data-cookie-action="reject"]')?.focus({ preventScroll: true });
+    };
+
+    const closeBanner = () => {
+      if (!banner) return;
+      banner.hidden = true;
+      document.body.classList.remove('cookie-open');
+    };
+
+    const showDetails = () => {
+      if (!details || !customizeButton || !saveButton) return;
+      details.hidden = false;
+      customizeButton.setAttribute('aria-expanded', 'true');
+      saveButton.hidden = false;
+    };
+
+    const hideDetails = () => {
+      if (!details || !customizeButton || !saveButton) return;
+      details.hidden = true;
+      customizeButton.setAttribute('aria-expanded', 'false');
+      saveButton.hidden = true;
+    };
+
+    banner?.addEventListener('click', event => {
+      const button = event.target.closest('[data-cookie-action]');
+      if (!button) return;
+      const action = button.getAttribute('data-cookie-action');
+
+      if (action === 'reject') {
+        storeConsent({ analytics: false, marketing: false });
+        closeBanner();
+        hideDetails();
+      }
+
+      if (action === 'accept') {
+        storeConsent({ analytics: true, marketing: true });
+        closeBanner();
+        hideDetails();
+      }
+
+      if (action === 'customize') {
+        details?.hidden ? showDetails() : hideDetails();
+      }
+
+      if (action === 'save') {
+        storeConsent({
+          analytics: Boolean(analyticsToggle?.checked),
+          marketing: Boolean(marketingToggle?.checked)
+        });
+        closeBanner();
+        hideDetails();
+      }
+    });
+
+    preferencesButton?.addEventListener('click', () => openBanner('settings'));
+    document.querySelectorAll('[data-cookie-open]').forEach(button => button.addEventListener('click', () => openBanner('settings')));
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && banner && !banner.hidden) {
+        storeConsent({ analytics: false, marketing: false });
+        closeBanner();
+        hideDetails();
+      }
+    });
+
+    const stored = getStoredConsent();
+    if (stored) {
+      window.VysioConsentState = stored;
+      runConsentedScripts(stored);
+      updateConsentUi(stored);
+    } else {
+      openBanner();
+    }
+  };
+
+  const updateConsentUi = consentState => {
+    const preferencesButton = document.getElementById('cookiePreferences');
+    if (preferencesButton) preferencesButton.hidden = !consentState;
+  };
+
+  window.VysioConsent = {
+    open: () => document.getElementById('cookiePreferences')?.click(),
+    get: () => window.VysioConsentState || getStoredConsent(),
+    has: hasConsentFor,
+    reset: () => {
+      try { window.localStorage.removeItem(CONSENT_STORAGE_KEY); } catch (_) {}
+      window.VysioConsentState = null;
+      document.getElementById('cookieConsent')?.remove();
+      document.getElementById('cookiePreferences')?.remove();
+      ensureConsentUi();
+    }
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', ensureConsentUi, { once: true });
+  } else {
+    ensureConsentUi();
+  }
+
 })();
