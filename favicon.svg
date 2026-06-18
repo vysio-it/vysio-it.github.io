@@ -1,5 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Vysio">
-  <rect width="64" height="64" rx="16" fill="#1a1713"/>
-  <path d="M14 18h8l10 28 10-28h8L35.5 50h-7L14 18Z" fill="#f0d69a"/>
-  <path d="M18 14h28" stroke="#d9b878" stroke-width="2" stroke-linecap="round" opacity=".55"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Vysio">
+  <rect width="512" height="512" fill="#02070d"/>
+  <circle cx="256" cy="256" r="164" fill="none" stroke="#fff" stroke-width="47"/>
+  <path d="M103 268C146 203 201 184 256 184s110 19 153 84" fill="none" stroke="#fff" stroke-width="27" stroke-linecap="round"/>
+  <circle cx="256" cy="260" r="45" fill="#d8ad5f"/>
 </svg>
