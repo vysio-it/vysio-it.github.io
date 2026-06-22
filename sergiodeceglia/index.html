@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#191612" />
+  <meta name="theme-color" content="#050505" />
   <meta name="color-scheme" content="dark" />
 
   <!-- Pagina volutamente non indicizzabile -->
@@ -27,16 +27,16 @@
 
   <style>
     :root {
-      --bg: #191612;
-      --bg-soft: #1f1b16;
-      --surface: #252019;
-      --surface-2: #2d271f;
-      --text: #f7f0e6;
-      --text-strong: #fff8ed;
-      --muted: #d1c7b8;
-      --muted-2: #b9ad9d;
-      --line: rgba(227, 207, 178, 0.18);
-      --line-strong: rgba(227, 207, 178, 0.32);
+      --bg: #050505;
+      --bg-soft: #0a0a0a;
+      --surface: #0e0e0e;
+      --surface-2: #151515;
+      --text: #f5f1ea;
+      --text-strong: #ffffff;
+      --muted: #d7d0c5;
+      --muted-2: #bdb5aa;
+      --line: rgba(236, 222, 198, 0.16);
+      --line-strong: rgba(236, 222, 198, 0.30);
       --accent: #d9b878;
       --accent-strong: #f0d69a;
       --accent-soft: rgba(217, 184, 120, 0.14);
@@ -60,9 +60,9 @@
       margin: 0;
       color: var(--text);
       background:
-        radial-gradient(circle at 16% 9%, rgba(217, 184, 120, 0.15), transparent 31%),
-        radial-gradient(circle at 82% 14%, rgba(255, 248, 237, 0.055), transparent 29%),
-        linear-gradient(135deg, #1b1713 0%, #151310 48%, #201b15 100%);
+        radial-gradient(circle at 16% 9%, rgba(217, 184, 120, 0.09), transparent 31%),
+        radial-gradient(circle at 82% 14%, rgba(255, 255, 255, 0.035), transparent 29%),
+        linear-gradient(135deg, #070707 0%, #020202 52%, #0b0b0b 100%);
       overflow-x: hidden;
       text-rendering: geometricPrecision;
     }
@@ -112,7 +112,7 @@
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background:
-        linear-gradient(180deg, rgba(255, 248, 237, 0.035), transparent 42%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.025), transparent 42%),
         var(--surface);
       box-shadow: var(--shadow);
     }
@@ -143,41 +143,18 @@
     .brand {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      min-height: 44px;
+      width: clamp(144px, 42vw, 190px);
+      aspect-ratio: 3 / 1;
+      min-height: 48px;
       border-radius: 14px;
+      background: url("/logo.png") center / contain no-repeat;
     }
 
     .brand-logo {
-      width: 1px;
-      height: 1px;
+      width: 100%;
+      max-width: none;
+      height: auto;
       opacity: 0;
-      position: absolute;
-      overflow: hidden;
-    }
-
-    .brand-word {
-      color: var(--text-strong);
-      font-size: clamp(26px, 8vw, 34px);
-      font-weight: 660;
-      letter-spacing: 0.17em;
-      line-height: 1;
-    }
-
-    .brand-eye {
-      position: relative;
-      width: 34px;
-      height: 22px;
-      border: 2px solid var(--text-strong);
-      border-radius: 999px;
-    }
-
-    .brand-eye::before {
-      content: "";
-      position: absolute;
-      inset: 6px 11px;
-      border-radius: 50%;
-      background: var(--accent-strong);
     }
 
     .badge {
@@ -189,7 +166,7 @@
       border-radius: 999px;
       padding: 0 12px;
       color: var(--accent-strong);
-      background: rgba(25, 22, 18, 0.36);
+      background: rgba(0, 0, 0, 0.34);
       font-size: 11px;
       font-weight: 720;
       letter-spacing: 0.06em;
@@ -208,33 +185,6 @@
       display: grid;
       gap: 10px;
       padding-top: 4px;
-    }
-
-    .pass-mark {
-      width: max-content;
-      display: inline-grid;
-      grid-template-columns: auto auto;
-      align-items: center;
-      gap: 10px;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 8px 10px;
-      color: var(--muted-2);
-      background: rgba(31, 27, 22, 0.72);
-      font-size: 11px;
-      font-weight: 740;
-      letter-spacing: 0.08em;
-    }
-
-    .pass-mark::before {
-      content: "";
-      width: 28px;
-      height: 14px;
-      border: 1px solid rgba(240, 214, 154, 0.58);
-      border-radius: 999px;
-      background:
-        radial-gradient(circle at 50% 50%, rgba(240, 214, 154, 0.92) 0 2px, transparent 3px),
-        radial-gradient(ellipse at 50% 50%, rgba(217, 184, 120, 0.2), transparent 68%);
     }
 
     h1 {
@@ -280,14 +230,14 @@
       border: 1px solid var(--line);
       border-radius: 18px;
       padding: 10px 12px;
-      background: rgba(31, 27, 22, 0.72);
+      background: rgba(5, 5, 5, 0.76);
       transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease, background 160ms ease;
     }
 
     .contact-action:hover,
     .contact-action:focus-visible {
       border-color: var(--line-strong);
-      background: rgba(45, 39, 31, 0.86);
+      background: rgba(18, 18, 18, 0.92);
       box-shadow: 0 14px 34px rgba(0, 0, 0, 0.22);
       transform: translateY(-1px);
     }
@@ -359,7 +309,7 @@
       border-radius: 18px;
       padding: 0 16px;
       color: var(--text-strong);
-      background: rgba(31, 27, 22, 0.78);
+      background: rgba(5, 5, 5, 0.82);
       font-size: 14px;
       font-weight: 800;
       letter-spacing: -0.01em;
@@ -388,7 +338,7 @@
       border: 1px solid var(--line);
       border-radius: 22px;
       padding: 12px;
-      background: rgba(31, 27, 22, 0.72);
+      background: rgba(5, 5, 5, 0.76);
     }
 
     .qr-frame {
@@ -397,7 +347,7 @@
       border-radius: 16px;
       padding: 7px;
       background: #ffffff;
-      box-shadow: inset 0 0 0 1px rgba(25, 22, 18, 0.08);
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
     }
 
     .qr-code {
@@ -468,7 +418,6 @@
       .card-inner { gap: 18px; padding: 18px; }
       .topbar { align-items: flex-start; flex-direction: column; }
       .badge { min-height: 32px; padding-inline: 10px; font-size: 10px; }
-      .pass-mark { font-size: 10px; }
       .actions { grid-template-columns: 1fr; }
       .qr-box { grid-template-columns: 88px 1fr; }
       .qr-frame { width: 88px; height: 88px; padding: 6px; }
@@ -482,14 +431,12 @@
       <div class="card-inner">
         <header class="topbar">
           <a class="brand" href="https://vysio.it" target="_blank" rel="noopener noreferrer" aria-label="Visita il sito VYSIO">
-            <img class="brand-logo" src="/logo.png" alt="" width="900" height="300" decoding="async" />
-            <span class="brand-word" aria-hidden="true">VYSI</span><span class="brand-eye" aria-hidden="true"></span>
+            <img class="brand-logo" src="/logo.png" alt="VYSIO" width="900" height="300" decoding="async" />
           </a>
           <span class="badge">VYSIO · Contact Pass</span>
         </header>
 
         <section class="identity" aria-label="Profilo">
-          <div class="pass-mark" aria-hidden="true">VYSIO / SDC / 01</div>
           <h1>Sergio De Ceglia</h1>
           <p class="role">Co-Founder &amp; Technical Lead · VYSIO</p>
           <p class="tagline">Software custom, automazioni e AI private per processi aziendali sicuri.</p>
