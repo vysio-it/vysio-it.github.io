@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+N:De Ceglia;Sergio;;;
+FN:Sergio De Ceglia
+ORG:VYSIO
+TITLE:Co-Founder & Technical Lead
+TEL;TYPE=CELL,VOICE:+393921589554
+EMAIL;TYPE=INTERNET:sergio.deceglia@vysio.it
+URL:https://vysio.it
+NOTE:Architetture digitali\, automazioni e AI per aziende che vogliono controllo\, efficienza e scala.
+END:VCARD
